@@ -6,7 +6,8 @@ int main(){
     int b = 5;
     int ans = a+b;
 
-    cout <<"Hello Bangladesh\n";
-    cout <<"Ans="<<ans<<"\n";
+    cout << "Hello Bangladesh" << endl;
+    cout << "Ans= " << ans << endl;
+    
     return 0; 
 }
