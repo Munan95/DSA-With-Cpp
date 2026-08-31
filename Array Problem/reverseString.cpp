@@ -1,29 +1,14 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-
-void reverseString(vector<char>& name){
-    int st = 0;
-    int end = name.size()-1;
-    while(st<end){
-        swap(name[st++],name[end--]);
-    }
-}
 
 int main(){
 
-    string input;
-    cin >> input;
+    string str;
+    getline(cin,str);
 
-    vector<char> name(input.begin(), input.end());
+    reverse(str.begin(), str.end()); //reverse charecter
 
-    reverseString(name);
-
-    for (char ch : name){
-        cout << ch;
-    }
-
-    cout << endl;
+    cout << str <<endl;
 
     return 0;
 }
