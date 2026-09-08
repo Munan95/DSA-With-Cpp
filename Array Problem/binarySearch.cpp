@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-int binarySearch(vector<int> arr,int target){
+int binarySearch(vector<int> arr,int target){   //normal way
     int st=0;
     int end=arr.size()-1;
 
@@ -15,6 +15,22 @@ int binarySearch(vector<int> arr,int target){
             end=mid-1; //left
         }else{
             st=mid+1; //right
+        }
+    }
+
+    return -1;
+}
+
+int bsWithRecursion(vector<int> arr,int target,int st,int end){  //recursive way
+    while(st<=end){
+        int mid=st+(end-st)/2;
+
+        if(arr[mid]==target){
+            return mid;
+        }else if(arr[mid]>target){
+            return bsWithRecursion(arr,target,st,mid-1); //left
+        }else{
+            return bsWithRecursion(arr,target,mid+1,end); //right
         }
     }
 
@@ -36,8 +52,13 @@ int main(){
     cout <<"Target:";
     cin>>target;
 
+    int st=0;
+    int end=arr.size()-1;
+
     cout <<"Index:";
-    cout <<binarySearch(arr,target)<<endl;
+    // cout <<binarySearch(arr,target)<<endl;
+    cout <<bsWithRecursion(arr,target,st,end)<<endl;
+
 
     return 0;
 }
