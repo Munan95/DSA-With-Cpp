@@ -10,13 +10,13 @@ int rotatedSearch(vector<int> arr,int tar){
         int mid = st+(end-st)/2;     //{2,3,4,5,6,7,0,1}
         if(arr[mid]==tar){
             return mid;
-        }else if(arr[st]<=arr[mid]){ //left
+        }else if(arr[st]<=arr[mid]){ //left sorted
             if(arr[st]<=tar && tar<=arr[mid]){
                 end=mid-1; 
             }else{
                 st=mid+1;
             }
-        }else{ //right
+        }else{ //right sorted
             if(arr[mid]<=tar && tar<=arr[end]){
                 st=mid+1; 
             }else{
