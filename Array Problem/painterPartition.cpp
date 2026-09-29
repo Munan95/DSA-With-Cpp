@@ -17,7 +17,7 @@ bool isValid(vector<int> arr,int n,int m,int allowUnit){
             paint=arr[i];
         }
     }
-    return painter > m ? false : true;
+    return painter <= m; 
 }
 
 int painterPartition(vector<int> arr,int n,int m){
