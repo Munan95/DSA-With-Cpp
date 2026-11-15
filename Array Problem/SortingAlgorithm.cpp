@@ -18,6 +18,18 @@ void bubbleSort(int arr[],int n){
 
 }
 
+void selectionSort(int arr[],int n){
+    for(int i = 0;i<n;i++){
+        int smallest = i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[smallest]){
+                smallest = j;
+            }
+        }
+        swap(arr[i],arr[smallest]);
+    }
+}
+
 void printArray(int arr[],int n){
 
     for(int i=0;i<n;i++){
@@ -27,11 +39,15 @@ void printArray(int arr[],int n){
 }
 
 int main(){
-    int n = 5;
-    int arr[] = {5,3,4,1,2};
+    int n = 7;
+    int arr[] = {5,4,1,2,3,7,6};
 
     //Bubble sort
-    bubbleSort(arr,n);
+    // bubbleSort(arr,n);
+
+    //Selection sort
+    selectionSort(arr,n);
+
     printArray(arr,n);
 
     return 0;
