@@ -18,7 +18,7 @@ void bubbleSort(int arr[],int n){
 
 }
 
-void selectionSort(int arr[],int n){
+void selectionSort(int arr[],int n){ //O(n^2)
     for(int i = 0;i<n;i++){
         int smallest = i;
         for(int j=i+1;j<n;j++){
