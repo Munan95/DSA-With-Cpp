@@ -3,7 +3,7 @@
 using namespace std;
 
 //Optimized
-void dnfAlgo(vector<int>& arr){ //O(n)
+void sortAlgo(vector<int>& arr){ //O(n)
     int n = arr.size();
     int count0 = 0;
     int count1 = 0;
@@ -31,11 +31,34 @@ void dnfAlgo(vector<int>& arr){ //O(n)
     }
 }
 
+//Optimal
+void dnfAlgo(vector<int>& arr){ //O(n)
+    int n = arr.size();
+    int low=0;
+    int mid=0;
+    int high=n-1;
+    while(mid <= high){
+        if(arr[mid] ==0 ){ //0
+            swap(arr[low],arr[mid]);
+            mid++;
+            low++;
+        }else if(arr[mid] == 1){ //1
+            mid++;
+        }else{ //2
+            swap(arr[high],arr[mid]);
+            high--;
+        }
+    }
+}
+
 int main(){
-    vector<int> arr = {1,0,1,0,0,2,1,2,0,2};
+    vector<int> arr = {1,0,1,0,0,2,1,2,0,2,1};
+
+    //sortAlgo(arr);
 
     dnfAlgo(arr);
 
+    //print
     for(int val:arr){
         cout<<val<<" ";
     }
